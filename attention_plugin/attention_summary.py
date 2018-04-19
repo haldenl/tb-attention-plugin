@@ -66,6 +66,8 @@ def input_pb(name, data, display_name=None, description=None):
                       metadata=summary_metadata,
                       tensor=tensor)
 
+    return summary
+
 def output_pb(name, data, display_name=None, description=None):
     try:
         tensor = tf.make_tensor_proto(data, dtype=tf.string)
@@ -83,9 +85,11 @@ def output_pb(name, data, display_name=None, description=None):
                       metadata=summary_metadata,
                       tensor=tensor)
 
+    return summary
+
 def attention_pb(name, data, display_name=None, description=None):
     try:
-        tensor = tf.make_tensor_proto(data, dtype=np.float32)
+        tensor = tf.make_tensor_proto(data, dtype=tf.float32)
     except TypeError as e:
         raise ValueError(e)
 
@@ -99,3 +103,5 @@ def attention_pb(name, data, display_name=None, description=None):
     summary.value.add(tag='%s/attention_dist_summary' % name,
                       metadata=summary_metadata,
                       tensor=tensor)
+
+    return summary
