@@ -50,7 +50,7 @@ def run_all(logdir, unused_verbose=False):
     """
     Run the simulation for every logdir.
     """
-    run(logdir, "steven_universe", ["Garnet", "Amethyst", "Pearl"], ["Okay", "Hello", "Hi"],
+    run(logdir, "demo", ["A", "Text", "Sequence"], ["Okay", "Hello", "Hi"],
         [[1], [2], [1]])
  
 def main(unused_argv):
