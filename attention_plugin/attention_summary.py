@@ -4,7 +4,7 @@ from __future__ import print_function
 
 import tensorflow as tf
 
-import attention_metadata
+from attention_plugin import attention_metadata
 
 def input_op(name, data, display_name=None, description=None, collections=None):
     if (display_name == None):
